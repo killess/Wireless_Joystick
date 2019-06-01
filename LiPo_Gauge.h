@@ -9,7 +9,7 @@
 // General
 #define COMPENSATION   0x9700
 #define QUICK_START    0x4000
-#define CNT2V          0.00125f
+#define CNT2VOLT       0.001221f
 
 // I2C
 #define ADR       0x36

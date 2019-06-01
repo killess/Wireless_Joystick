@@ -86,11 +86,11 @@ void i2c_write16(regs_t reg, unsigned int data)
 float lipo_read_vCell(void)
 {
   lipo.vCell = i2c_read16(VCELL);
-  lipo.vCell >>= 4;  
+  lipo.vCell = lipo.vCell >> 4;  
 
-  // vcell reports battery in 1.25mV increments
-  lipo.Voltage = (float)lipo.vCell * CNT2V;
-
+  //lipo.Voltage = ((float)lipo.vCell) * CNT2VOLT;
+  lipo.Voltage = (float)lipo.vCell * 1/800;
+ 
   //SerialUSB.print(lipo.Voltage, 2); 
   return lipo.Voltage;
 }
